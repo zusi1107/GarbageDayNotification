@@ -28,7 +28,7 @@
                 "Runtime": "python3.7",
                 "Environment": {
                     "Variables": {
-                        "access_token": "{{resolve:ssm:GarbageDayNotification-LINEhook:1}}"
+                        "access_token": "{{resolve:ssm-secure:GarbageDayNotification-LINEhook:1}}"
                     }
                 },
                 "Timeout": 10,
