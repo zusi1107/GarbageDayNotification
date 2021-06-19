@@ -31,11 +31,25 @@ def create_garbage_notification_message():
     else:
         return "ごみ出しなし"
 
+# SSM Get SecureString
+import boto3
+ssm = boto3.client('ssm', 'us-east-2')
+def get_parameters():
+    response = ssm.get_parmaeters(
+        Names=['Test'],WithDecryption=True
+    )
+    for parameter in response['Parameters']:
+        return parameter['Value']
+
+value = get_parameters()
+print("value1 = " + value)
+
 # Line Notify
 ACCESS_TOKEN = os.environ["access_token"]
 HEADERS = {"Authorization": "Bearer %s" % ACCESS_TOKEN}
 URL = "https://notify-api.line.me/api/notify"
 
+# Handler
 def lambda_handler(event, context):
     message = create_garbage_notification_message()
     data = {'message': message}

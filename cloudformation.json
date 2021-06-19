@@ -26,11 +26,6 @@
                 "Handler": "lambda_function.lambda_handler",
                 "Role": "lambda_basic_execution",
                 "Runtime": "python3.7",
-                "Environment": {
-                    "Variables": {
-                        "access_token": "{{resolve:ssm-secure:GarbageDayNotification-LINEhook:1}}"
-                    }
-                },
                 "Timeout": 10,
                 "MemorySize": 128
             }
