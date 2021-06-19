@@ -35,7 +35,7 @@
             "Properties": {
                 "Description": "Triggering EOD job for GarbageDayNotificaiton",
                 "Name": "GarbageDayNotificaitonEODEvent",
-                "ScheduleExpression:": "cron(0 22 * * *)",
+                "ScheduleExpression:": "cron(0 13 * * ? *)",
                 "State": "ENABLED",
                 "Targets": [{
                     "Arn": "arn:aws:lambda:us-east-2:811231261912:function:garbage_day_notification_two",
