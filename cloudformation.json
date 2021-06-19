@@ -46,7 +46,7 @@
         "MyPermission": {
             "Type": "AWS::Lambda::Permission",
             "Properties": {
-                "Action": "lambda:InvokeFunction ",
+                "Action": "lambda:InvokeFunction",
                 "FunctionName": "garbage_day_notification_two",
                 "Principal": "events.amazonaws.com",
                 "SourceArn": {
