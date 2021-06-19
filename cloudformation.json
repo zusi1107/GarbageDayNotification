@@ -29,6 +29,32 @@
                 "Timeout": 10,
                 "MemorySize": 128
             }
+        },
+        "MyEvent": {
+            "Type": "AWS::Events::Rule",
+            "Properties": {
+                "Description": "Triggering EOD job for GarbageDayNotificaiton",
+                "Name": "GarbageDayNotificaitonEODEvent",
+                "ScheduleExpression:": "cron(0 22 * * *)",
+                "State": "ENABLED",
+                "Targets": [{
+                    "Arn": "arn:aws:lambda:us-east-2:811231261912:function:garbage_day_notification_two",
+                    "Id": "garbage_day_notification_two"
+                }]
+            }
+        },
+        "MyPermission": {
+            "Type": "AWS::Lambbda:Permission",
+            "Properties": {
+                "Action": "lambda:InvokeFunction ",
+                "FunctionName": "garbage_day_notification_two",
+                "Principal": "events.amazonaws.com",
+                "SourceArn": {
+                    "Fn::GetAtt": [
+                        "GarbageDayNotificaitonEODEvent", "Arn"
+                    ]
+                }
+            }
         }
     }
 }
