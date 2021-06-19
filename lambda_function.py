@@ -35,7 +35,7 @@ def create_garbage_notification_message():
 import boto3
 ssm = boto3.client('ssm', 'us-east-2')
 def get_parameters():
-    response = ssm.get_parmaeters(
+    response = ssm.get_parameters(
         Names=['Test'],WithDecryption=True
     )
     for parameter in response['Parameters']:
