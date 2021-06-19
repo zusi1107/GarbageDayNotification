@@ -44,7 +44,7 @@
             }
         },
         "MyPermission": {
-            "Type": "AWS::Lambbda:Permission",
+            "Type": "AWS::Lambda:Permission",
             "Properties": {
                 "Action": "lambda:InvokeFunction ",
                 "FunctionName": "garbage_day_notification_two",
