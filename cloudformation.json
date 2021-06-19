@@ -13,7 +13,7 @@
         "MyLambda": {
             "Type": "AWS::Lambda::Function",
             "Properties": {
-                "FunctionName": "garbage_day_notification2",
+                "FunctionName": "garbage_day_notification_two",
                 "Code": {
                     "S3Bucket": {
                         "Ref": "LatestS3Bucket"
