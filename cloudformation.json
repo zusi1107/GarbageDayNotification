@@ -51,7 +51,7 @@
                 "Principal": "events.amazonaws.com",
                 "SourceArn": {
                     "Fn::GetAtt": [
-                        "GarbageDayNotificaitonEODEvent", "Arn"
+                        "MyEvent", "Arn"
                     ]
                 }
             }
